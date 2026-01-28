@@ -1,47 +1,51 @@
 @echo off
 set "ESC="
-set "VERT=%ESC%[92m"
-set "BLEU=%ESC%[94m"
-set "RESET=%ESC%[0m"
-set "JAUNE=%ESC%[93m"
+set "V=%ESC%[92m"
+set "B=%ESC%[94m"
+set "O=%ESC%[33m"
+set "J=%ESC%[93m"
+set "R=%ESC%[0m"
 
-echo %BLEU%[*] Installation du setup en cours...%RESET%
+echo --- Rapport d'erreurs du %date% %time% --- > error.log
+echo %B%[*] Installation du setup en cours...%R%
 
 :: Installation de Scoop (silencieux)
-echo %JAUNE%[1/5]%RESET% %BLEU%Installation de Scoop...%RESET%
-powershell -Command "Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force" >nul
-powershell -Command "Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression" >nul
+echo %O%[1/5] %B%Installation de Scoop...%R%
+powershell -Command "Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force" >nul 2>> error.log
+powershell -Command "Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression" >nul 2>> error.log
+echo %O%[%R%OK%O%] %V%Scoop installé.%R%
 
 :: Ajout du bucket (silencieux)
-echo %JAUNE%[2/5]%RESET% %BLEU%Ajout du bucket extras...%RESET%
-call scoop bucket add extras >nul
+echo %O%[2/5] %B%Ajout du bucket extras...%R%
+call scoop bucket add extras >nul 2>> error.log
+echo %O%[%R%OK%O%] %V%Bucket extras ajouté.%R%
 
 :: Installation des logiciels (silencieux)
 :: C'est ici que ça prend du temps, mais rien ne s'affichera
-echo %JAUNE%[3/5]%RESET% %BLEU%Installation des logiciels...%RESET%
-call scoop install git mpv yt-dlp ffmpeg syncplay ani-cli aria2 >nul
-echo %VERT%[OK] Logiciels installes.%RESET%
+echo %O%[3/5] %B%Installation des logiciels...%R%
+call scoop install git mpv yt-dlp ffmpeg syncplay ani-cli aria2 >nul 2>> error.log
+echo %O%[%R%OK%O%] %V%Logiciels installes.%R%
 
 :: --- CONFIGURATION MPV ---
-echo %JAUNE%[4/5]%RESET% %BLEU%Configuration de MPV...%RESET%
+echo %O%[4/5] %B%Configuration de MPV...%R%
 set "MPV_TARGET=%USERPROFILE%\scoop\apps\mpv\current\portable_config"
-if not exist "%MPV_TARGET%" mkdir "%MPV_TARGET%" >nul
+if not exist "%MPV_TARGET%" mkdir "%MPV_TARGET%" >nul 2>> error.log
 
-copy /y "config\mpv.zip" "%MPV_TARGET%\mpv.zip" >nul
-powershell -Command "Expand-Archive -Path '%MPV_TARGET%\mpv.zip' -DestinationPath '%MPV_TARGET%' -Force" >nul
-del "%MPV_TARGET%\mpv.zip" >nul
+copy /y "config\mpv.zip" "%MPV_TARGET%\mpv.zip" >nul 2>> error.log
+powershell -Command "Expand-Archive -Path '%MPV_TARGET%\mpv.zip' -DestinationPath '%MPV_TARGET%' -Force" >nul 2>> error.log
+del "%MPV_TARGET%\mpv.zip" >nul 2>> error.log
 
-echo %VERT%[OK] Configuration MPV appliquée.%RESET%
+echo %O%[%R%OK%O%] %V%Configuration MPV appliquee.%R%
 
 :: --- CONFIGURATION SYNCPLAY ---
-echo %JAUNE%[5/5]%RESET% %BLEU%Configuration de Syncplay...%RESET%
+echo %O%[5/5] %B%Configuration de Syncplay...%R%
 set "SYNCPLAY_PERSIST=%USERPROFILE%\scoop\persist\syncplay"
-if not exist "%SYNCPLAY_PERSIST%" mkdir "%SYNCPLAY_PERSIST%" >nul
-copy /y "config\syncplay.ini" "%SYNCPLAY_PERSIST%\syncplay.ini" >nul
-echo %VERT%[OK] Configuration Syncplay appliquée.%RESET%
+if not exist "%SYNCPLAY_PERSIST%" mkdir "%SYNCPLAY_PERSIST%" >nul 2>> error.log
+copy /y "config\syncplay.ini" "%SYNCPLAY_PERSIST%\syncplay.ini" >nul 2>> error.log
+echo %O%[%R%OK%O%] %V%Configuration Syncplay appliquee.%R%
 
 echo.
-echo %VERT%==================================================%RESET%
-echo %VERT%       TOUT EST INSTALLE ET PRET A L'EMPLOI ! %RESET%
-echo %VERT%==================================================%RESET%
+echo %O%==================================================%R%
+echo %V%       TOUT EST INSTALLE ET PRET A L'EMPLOI ! %R%
+echo %O%==================================================%R%
 pause

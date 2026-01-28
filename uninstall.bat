@@ -1,7 +1,7 @@
 @echo off
 
 echo ==================================================
-echo   DESINSTALLATION DU SETUP MPV ^| SYNCPLAY ^| ANI-CLI
+echo DESINSTALLATION DU SETUP MPV ^| SYNCPLAY ^| ANI-CLI
 echo ==================================================
 
 :: Mise a jour du PATH pour etre sur que scoop est reconnu
