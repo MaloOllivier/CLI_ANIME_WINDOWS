@@ -11,25 +11,41 @@ powershell -Command "Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expres
 :: Mise a jour du PATH pour utiliser scoop sans redemarrer
 set "PATH=%USERPROFILE%\scoop\shims;%PATH%"
 
+
+echo ====================================================================
 echo Ajout du bucket 'extras' pour Scoop
+echo ====================================================================
 call scoop bucket add extras
 
+
+echo ====================================================================
 echo Installation de MPV, syncplay et ani-cli via Scoop (+ les dependances)
+echo ====================================================================
 call scoop install git mpv yt-dlp ffmpeg syncplay ani-cli
 
+echo ====================================================================
 echo Creation du dossier de configuration pour MPV
+echo ====================================================================
 set "MPV_PATH=%USERPROFILE%\scoop\persist\mpv\portable_config"
 if not exist "%MPV_PATH%" mkdir "%MPV_PATH%"
 
+
+echo ====================================================================
 echo Copie de la configuration MPV dans le dossier mpv
+echo ====================================================================
 copy /y "config\mpv.zip" "%MPV_PATH%\mpv.zip"
 powershell -Command "Expand-Archive -Path '%MPV_PATH%\mpv.zip' -DestinationPath '%MPV_PATH%' -Force"
 del "%MPV_PATH%\mpv.zip"
 
+
+echo ====================================================================
 echo Copie du fichier de configuration syncplay.ini dans le dossier syncplay
+echo ====================================================================
 set "SYNCPLAY_PATH=%USERPROFILE%\scoop\persist\syncplay"
 if not exist "%SYNCPLAY_PATH%" mkdir "%SYNCPLAY_PATH%"
 copy /y "config\syncplay.ini" "%SYNCPLAY_PATH%\syncplay.ini"
+
+
 
 echo ====================================================================
 echo INSTALLATION TERMINEE ! VOUS POUVEZ LANCER MPV ^| SYNCPLAY ^| ANI-CLI
