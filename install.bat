@@ -1,6 +1,6 @@
 @echo off
 set "ESC="
-set "V=%ESC%[92m"
+set "V=%ESC%[38;2;172;252;151m"
 set "B=%ESC%[94m"
 set "O=%ESC%[33m"
 set "J=%ESC%[93m"
@@ -45,7 +45,7 @@ copy /y "config\syncplay.ini" "%SYNCPLAY_PERSIST%\syncplay.ini" >nul 2>> error.l
 echo %O%[%R%OK%O%] %V%Configuration Syncplay appliquee.%R%
 
 echo.
-echo %O%==================================================%R%
-echo %V%       TOUT EST INSTALLE ET PRET A L'EMPLOI ! %R%
-echo %O%==================================================%R%
+echo ==================================================
+echo %V%     TOUT EST INSTALLE ET PRET A L'EMPLOI ! %R%
+echo ==================================================
 pause
