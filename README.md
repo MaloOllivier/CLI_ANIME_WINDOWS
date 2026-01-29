@@ -40,7 +40,6 @@ Pour regarder tes animes, utilise **Git Bash** (déjà inclus dans l'install) :
 
 ## ⚙️ Configuration de Syncplay
 
-Bonne nouvelle ! Depuis la version 1.5, la configuration manuelle appartient au passé.
 
 ### ✅ Automatisation du lecteur
 Le script détecte et injecte automatiquement le chemin vers **MPV** dans Syncplay. 
