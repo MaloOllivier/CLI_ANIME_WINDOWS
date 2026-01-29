@@ -4,6 +4,13 @@ echo ==================================================
 echo DESINSTALLATION DU SETUP MPV ^| SYNCPLAY ^| ANI-CLI
 echo ==================================================
 
+set /p "CONFIRM=Voulez-vous vraiment tout desinstaller ? [O/N] : "
+if /i "%CONFIRM%" neq "O" (
+    echo Desinstallation annulee.
+    timeout /t 3 >nul
+    exit /b
+)
+
 :: Mise a jour du PATH pour etre sur que scoop est reconnu
 set "PATH=%USERPROFILE%\scoop\shims;%PATH%"
 
