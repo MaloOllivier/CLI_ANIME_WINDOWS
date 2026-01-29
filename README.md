@@ -61,9 +61,6 @@ Tu souhaites faire du tri ou supprimer proprement le projet ? C’est aussi simp
    * Les fichiers de configuration et les shaders.
    * Les fichiers temporaires.
 
-> [!CAUTION]
-> **IMPORTANT :** Le fichier de desinstallation supprimera Scoop.
-
 ---
 ## 🎨 Palette visuelle du script
 * 🟠 **Orange** : Informations et progression.
