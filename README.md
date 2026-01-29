@@ -1,6 +1,6 @@
 # 🎬 CLI ANIME WINDOWS
 
-[![Release](https://img.shields.io/github/v/release/MaloOllivier/CLI_ANIME_WINDOWS?color=CA9861&label=Version)](https://github.com/MaloOllivier/CLI_ANIME_WINDOWS/releases)
+[![Release](https://img.shields.io/github/v/release/Maloll/CLI_ANIME_WINDOWS?color=CA9861&label=Version)](https://github.com/Maloll/CLI_ANIME_WINDOWS/releases)
 [![Discord](https://img.shields.io/badge/Discord-maloll-5865F2?logo=discord&logoColor=white)](https://discordapp.com/users/970348301448806430)
 
 Installation et configuration automatique de **MPV**, **Syncplay** et **ani-cli** via Scoop pour un setup de streaming optimal.
@@ -9,7 +9,7 @@ Installation et configuration automatique de **MPV**, **Syncplay** et **ani-cli*
 
 ## 📥 Téléchargement
 
-[ ![Download](https://img.shields.io/badge/TÉLÉCHARGER-DERNIÈRE_RELEASE-CA9861?style=for-the-badge&logo=github) ](https://github.com/MaloOllivier/CLI_ANIME_WINDOWS/releases/latest)
+[ ![Download](https://img.shields.io/badge/TÉLÉCHARGER-DERNIÈRE_RELEASE-CA9861?style=for-the-badge&logo=github) ](https://github.com/Maloll/CLI_ANIME_WINDOWS/releases/latest)
 
 > [!CAUTION]
 > **IMPORTANT :** Une fois le fichier `.zip` téléchargé, tu **DOIS** l'extraire complètement avant de lancer l'installeur. Si tu lances le `.bat` directement depuis l'aperçu du ZIP, les fichiers de configuration ne seront pas trouvés.
