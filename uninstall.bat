@@ -1,12 +1,20 @@
 @echo off
 
+set "ESC="
+set "V=%ESC%[38;2;172;252;151m"
+set "B=%ESC%[94m"
+set "O=%ESC%[33m"
+set "J=%ESC%[93m"
+set "RD=%ESC%[91m"
+set "R=%ESC%[0m"
+
 echo ==================================================
-echo DESINSTALLATION DU SETUP MPV ^| SYNCPLAY ^| ANI-CLI
+echo %O%DESINSTALLATION%R% DU SETUP MPV %O%^|%R% SYNCPLAY %O%^|%R% ANI-CLI%R%
 echo ==================================================
 
-set /p "CONFIRM=Voulez-vous vraiment tout desinstaller ? [O/N] : "
+set /p "CONFIRM=%RD%Voulez-vous vraiment tout desinstaller ? %O%[%R%O/N%O%]%R% : "
 if /i "%CONFIRM%" neq "O" (
-    echo Desinstallation annulee.
+    echo %B%Desinstallation annulee.%R%
     timeout /t 3 >nul
     exit /b
 )
@@ -26,9 +34,9 @@ if exist "%USERPROFILE%\scoop\persist\syncplay" (
 )
 
 
-set /p "CONFIRM=Voulez-vous desinstaller Scoop ? [O/N] : "
+set /p "CONFIRM=%RD%Voulez-vous desinstaller Scoop ? %O%[%R%O/N%O%]%R% : "
 if /i "%CONFIRM%" neq "O" (
-    echo [3/3] Suppression de Scoop et du dossier racine...
+    echo %O%Suppression de Scoop et du dossier racine...%R%
     :: Commande PowerShell pour desinstaller Scoop proprement
     powershell -Command "scoop uninstall scoop" 2>nul
 
