@@ -40,16 +40,32 @@ Pour regarder tes animes, utilise **Git Bash** (déjà inclus dans l'install) :
 
 ## ⚙️ Configuration de Syncplay
 
-Le script ne peut pas encore detecter automatiquement l'emplacement de MPV, au premier démarrage de syncplay :
+Bonne nouvelle ! Depuis la version 1.5, la configuration manuelle appartient au passé.
 
-1. Dans **"Chemin d'acces au lecteur multimédia:"**, colle ceci :
-   `C:\Users\<TON_NOM>\scoop\apps\mpv\current\mpv.exe`  
-   *(Remplace <TON_NOM> par ton utilisateur Windows)*
+### ✅ Automatisation du lecteur
+Le script détecte et injecte automatiquement le chemin vers **MPV** dans Syncplay. 
+Pas besoin de chercher le dossier `scoop`.
 
-![Capture Syncplay](https://github.com/user-attachments/assets/daae165f-d27c-4bfd-aeb8-abf0fd64dda1)
+### 📺 Nouvelle interface OSD (v1.5)
+La configuration de Syncplay a été entièrement revue pour améliorer votre confort visuel :
+* **Support OSD optimisé** : Les messages de synchronisation et les notifications s'affichent désormais proprement par-dessus la vidéo.
+* **Format Compact** : L'interface à l'écran a été recalibrée pour être la plus discrète possible, laissant un maximum de place à l'image.
 
 ---
+## 🗑️ Désinstallation
 
+Tu souhaites faire du tri ou supprimer proprement le projet ? C’est aussi simple que l’installation :
+
+1. Ouvre le fichier `uninstaller.bat` dans ton dossier.
+2. Le script va supprimer automatiquement :
+   * Les logiciels installés via Scoop (**MPV**, **Syncplay**, etc.).
+   * Les fichiers de configuration et les shaders.
+   * Les fichiers temporaires.
+
+> [!CAUTION]
+> **IMPORTANT :** Le fichier de desinstallation supprimera Scoop.
+
+---
 ## 🎨 Palette visuelle du script
 * 🟠 **Orange** : Informations et progression.
 * 🟢 **Vert Clair** : Succès de l'installation.
