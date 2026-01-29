@@ -25,14 +25,20 @@ if exist "%USERPROFILE%\scoop\persist\syncplay" (
     rd /s /q "%USERPROFILE%\scoop\persist\syncplay"
 )
 
-echo [3/3] Suppression de Scoop et du dossier racine...
-:: Commande PowerShell pour desinstaller Scoop proprement
-powershell -Command "scoop uninstall scoop" 2>nul
 
-:: Nettoyage final du dossier scoop s'il reste des residus
-if exist "%USERPROFILE%\scoop" (
-    rd /s /q "%USERPROFILE%\scoop"
+set /p "CONFIRM=Voulez-vous desinstaller Scoop ? [O/N] : "
+if /i "%CONFIRM%" neq "O" (
+    echo [3/3] Suppression de Scoop et du dossier racine...
+    :: Commande PowerShell pour desinstaller Scoop proprement
+    powershell -Command "scoop uninstall scoop" 2>nul
+
+    :: Nettoyage final du dossier scoop s'il reste des residus
+    if exist "%USERPROFILE%\scoop" (
+        rd /s /q "%USERPROFILE%\scoop"
+    )
 )
+
+
 
 echo.
 echo ====================================================================
