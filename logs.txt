@@ -1,7 +1,0 @@
---- Rapport d'erreurs du 30/01/2026  9:25:35,46 --- 
-Initializing...
-Scoop is already installed. Run 'scoop update' to get the latest version.
-Abort.
-WARN  The 'extras' bucket already exists. To add this bucket again, first remove it by running 'scoop bucket rm extras'.
-        1 fichier(s) copi‚(s).
-        1 fichier(s) copi‚(s).
