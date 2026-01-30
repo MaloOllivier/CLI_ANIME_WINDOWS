@@ -12,7 +12,7 @@ Installation et configuration automatique de **MPV**, **Syncplay** et **ani-cli*
 [ ![Download](https://img.shields.io/badge/TÉLÉCHARGER-DERNIÈRE_RELEASE-CA9861?style=for-the-badge&logo=github) ](https://github.com/Maloll/CLI_ANIME_WINDOWS/releases/latest)
 
 > [!CAUTION]
-> **IMPORTANT :** Une fois le fichier `.zip` téléchargé, tu **DOIS** l'extraire complètement avant de lancer l'installeur. Si tu lances le `.bat` directement depuis l'aperçu du ZIP, les fichiers de configuration ne seront pas trouvés.
+> **IMPORTANT :** Une fois le fichier `.zip` téléchargé, tu **DOIS** l'extraire complètement avant de lancer l'installateur. Si tu lances le `.bat` directement depuis l'aperçu du ZIP, les fichiers de configuration ne seront pas trouvés.
 
 ---
 
@@ -32,9 +32,28 @@ Pour regarder tes animes, utilise **Git Bash** (déjà inclus dans l'install) :
 | Commande | Action |
 | :--- | :--- |
 | `ani-cli` | Menu interactif de recherche. |
-| `ani-cli -s` | Pour regarder en simultané avec syncplay. |
+| `ani-cli -s` | Pour regarder en simultané avec Syncplay. |
 | `ani-cli -u` | Met à jour l'outil vers la dernière version. |
 | `ani-cli -c` | Reprend la lecture là où tu t'étais arrêté. |
+
+---
+## ⌨️ Raccourcis Clavier (MPV)
+
+### 🌟 Amélioration d'image (Anime4K)
+| Touche | Action |
+| :--- | :--- |
+| `&` | **Mode Ultra** : Upscaling maximal (nécessite un bon GPU). |
+| `é` | **Mode Léger** : Amélioration fluide pour petites configs. |
+| `"` | **OFF** : Désactive tous les shaders. |
+
+### 🎬 Contrôle de la lecture
+| Touche | Action |
+| :--- | :--- |
+| `Espace` | Lecture / Pause. |
+| `f` | Basculer en plein écran. |
+| `<` | Reculer de 5 secondes. |
+| `>` | Avancer de 5 secondes. |
+| `B` / `N` | Chapitre Précédent / Suivant. |
 
 ---
 
@@ -66,6 +85,18 @@ Tu souhaites faire du tri ou supprimer proprement le projet ? C’est aussi simp
 * 🟠 **Orange** : Informations et progression.
 * 🟢 **Vert Clair** : Succès de l'installation.
 * 🔴 **Rouge** : Erreur critique (vérifie le fichier `error.log`).
+
+---
+## 📦 Logiciels Installés
+
+Le script installe et configure automatiquement les logiciels suivants pour garantir une expérience optimale :
+
+* **Gestionnaire** : `scoop` (Gestionnaire de paquets Windows).
+* **Lecteur & Streaming** : `mpv`, `syncplay`, `ani-cli`.
+* **Moteur de téléchargement** : `yt-dlp`, `aria2` (utilisé pour accélérer les installations).
+* **Traitement Vidéo** : `ffmpeg`.
+* **Outils Système** : `git`, `7zip`, `fzf`.
+* **Améliorations Visuelles** : `ModernZ` (UI user-friendly pour MPV), `Anime4K` (Shaders pour améliorer la qualité des animes).
 
 ---
 Fait par [Maloll](https://github.com/Maloll). ❤️
