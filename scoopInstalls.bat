@@ -53,14 +53,6 @@ if exist "%USERPROFILE%\scoop\apps\syncplay" (
     echo %O%[%R%XXX%O%]%R% %RD%syncplay n'a pas ete correctement installe.%R%
 )
 
-echo %O%[%R%6/6%O%] %B%Installation de ani-cli...%R%
-powershell -Command "& { & %USERPROFILE%\scoop\shims\scoop.cmd install ani-cli 2>&1 | %FILTER% }" 2>&1
-if exist "%USERPROFILE%\scoop\apps\ani-cli" (
-    echo %O%[%R%OK%O%]%R% %V%ani-cli installe.%R%
-) else (
-    echo %O%[%R%XXX%O%]%R% %RD%ani-cli n'a pas ete correctement installe.%R%
-)
-
 echo.
 echo %V%[OK] Installation terminee.%R%
 timeout 3
